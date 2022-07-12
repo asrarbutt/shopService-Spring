@@ -1,10 +1,14 @@
 package com.example.shopservicespring.shop.product;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 
+@Repository
 public class ProductRepo {
 
     private final Map<Integer, Product> products = Map.of(

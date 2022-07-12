@@ -6,6 +6,7 @@ import com.example.shopservicespring.shop.order.Order;
 import com.example.shopservicespring.shop.order.OrderRepo;
 import com.example.shopservicespring.shop.product.Product;
 import com.example.shopservicespring.shop.product.ProductRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,8 +14,10 @@ import java.util.List;
 
 @Service
 public class ShopService {
+
     private final ProductRepo productRepo;
     private final OrderRepo orderRepo;
+
 
     public ShopService(
             ProductRepo productRepo,
@@ -23,6 +26,10 @@ public class ShopService {
         this.orderRepo = orderRepo;
     }
 
+    //welcome to the main shop page
+    public String mainPage(){
+        return "welcome to the Shop";
+    }
     public Product getProduct(int id) {
         return productRepo.getProduct(id);
     }
