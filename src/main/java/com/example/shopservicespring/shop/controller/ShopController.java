@@ -47,11 +47,11 @@ public class ShopController {
         return shopService.getOrder(id);
     }
 
-    @PostMapping("orders/{id}")
-    public Order postOrder(@RequestBody int id){
+    int i;
+    @PostMapping(path = "orders/{id}")
+    public void postOrder(@PathVariable int id, @RequestBody List<Integer> idList){
 
-
-        return shopService.getOrder(id);
+         shopService.addOrder(id, idList);
     }
 
 
